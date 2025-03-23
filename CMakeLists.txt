@@ -17,10 +17,13 @@ FetchContent_Declare(
   GIT_TAG 11.1.4)
 FetchContent_MakeAvailable(fmt)  
 
-add_executable(main src/main.cpp)
+add_executable(fisica
+  src/main.cpp
+  src/body.cpp)
 
-target_compile_features(main PRIVATE cxx_std_20)
-target_compile_options(main PRIVATE -Wall -Wextra -Wpedantic)
+target_compile_features(fisica PRIVATE cxx_std_20)
+target_compile_options(fisica PRIVATE -Wall -Wextra -Wpedantic)
 
-target_link_libraries(main PRIVATE SFML::Graphics)
-target_link_libraries(main PRIVATE fmt::fmt)
+target_link_libraries(fisica PRIVATE SFML::Graphics)
+target_link_libraries(fisica PRIVATE SFML::System)
+target_link_libraries(fisica PRIVATE fmt::fmt)
